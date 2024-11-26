@@ -41,28 +41,40 @@ class Person:
         self.last_name = last_name
 
     @property
-    def first_name(self):
+    def first_name(self) -> str:
+        """
+        Returns the course name.
+        :return: The course name.
+        """
         return self.__first_name.title()
 
     @first_name.setter
-    def first_name(self, value: str):
+    def first_name(self, value: str) -> None:
         if value.isalpha() or value == "":
             self.__first_name = value
         else:
             raise ValueError("The first name should only contain letters!")
 
     @property
-    def last_name(self):
+    def last_name(self) -> str:
+        """
+        Returns the last name.
+        :return: The last name.
+        """
         return self.__last_name.title()
 
     @last_name.setter
-    def last_name(self, value: str):
+    def last_name(self, value: str) -> None:
         if value.isalpha() or value == "":
             self.__last_name = value
         else:
             raise ValueError("The last name should only contain letters!")
 
-    def __str__(self):
+    def __str__(self) -> str:
+        """
+        The string function for Person.
+        :return: The string values.
+        """
         return f"{self.first_name}, {self.last_name}"
 
 
@@ -85,15 +97,23 @@ class Student(Person):
         self.course_name = course_name
 
     @property
-    def course_name(self):
+    def course_name(self) -> str:
+        """
+        Returns the course name.
+        :return: The course name.
+        """
         return self.__course_name.title()
 
     @course_name.setter
-    def course_name(self, value: str):
-            self.__course_name = value
+    def course_name(self, value: str) -> None:
+        self.__course_name = value
 
-    def __str__(self):
-        return f'{self.first_name}, {self.last_name}, {self.course_name}'
+    def __str__(self) -> str:
+        """
+        The string function for Student.
+        :return: The string values.
+        """
+        return f'{super().__str__()}, {self.course_name}'
 
 
 # Processing ---------------------------------------------------------------- #
@@ -106,7 +126,7 @@ class FileProcessor:
     N.Greco, 11/25/2024, Updated for Assignment07
     """
     @staticmethod
-    def read_data_from_file(file_name: str, student_data: list):
+    def read_data_from_file(file_name: str, student_data: list) -> list:
         """
         This function reads data from a JSON file and loads it into a list of
         dictionary rows.
@@ -139,7 +159,7 @@ class FileProcessor:
         return student_data
 
     @staticmethod
-    def write_data_to_file(file_name: str, student_data: list):
+    def write_data_to_file(file_name: str, student_data: list) -> None:
         """
         This function writes data to a json file with data from a list of
         dictionary rows.
@@ -190,7 +210,7 @@ class IO:
     """
 
     @staticmethod
-    def output_error_messages(message: str, error: Exception = None):
+    def output_error_messages(message: str, error: Exception = None)-> None:
         """
         This function displays a custom error messages to the user
 
@@ -209,7 +229,7 @@ class IO:
             print(error, error.__doc__, type(error), sep='\n')
 
     @staticmethod
-    def output_menu(menu: str):
+    def output_menu(menu: str) -> None:
         """
         This function displays the menu of choices to the user.
 
@@ -222,7 +242,7 @@ class IO:
         print(menu)
 
     @staticmethod
-    def input_menu_choice():
+    def input_menu_choice() -> str:
         """
         This function gets a menu choice from the user.
 
@@ -243,7 +263,7 @@ class IO:
         return choice
 
     @staticmethod
-    def output_student_courses(student_data: list):
+    def output_student_courses(student_data: list) -> None:
         """
         This function displays the student and course names to the user.
 
@@ -264,7 +284,7 @@ class IO:
         print("-" * 60)
 
     @staticmethod
-    def input_student_data(student_data: list):
+    def input_student_data(student_data: list) -> list:
         """
         This function gets the student's first name and last name, with a
         course name from the user.
