@@ -5,6 +5,7 @@
 # Change Log: (Who, When, What)
 #   R.Root, 01/01/2030, Created Script
 #   N.Greco, 11/25/2024, Updated Script for Assignment07
+#   N.Greco, 11/27/2024, Fixed a formatting error in the write error handler.
 # -------------------------------------------------------------------------- #
 import json
 
@@ -152,7 +153,7 @@ class FileProcessor:
             file.close()
         except Exception as e:
             IO.output_error_messages(message = "Error: There was a problem" \
-                    "with reading the file.", error = e)
+                    " with reading the file.", error = e)
         finally:
             if not file.close:
                 file.close()

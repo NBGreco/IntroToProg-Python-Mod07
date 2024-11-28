@@ -1,5 +1,8 @@
 [
   {"FirstName": "Nick", "LastName": "Greco", "CourseName": "Python 110"},
   {"FirstName": "Steve", "LastName": "Howe", "CourseName": "Advanced Guitar"},
-  {"FirstName": "James", "LastName": "Cameron", "CourseName": "Filmmaking"}
+  {"FirstName": "James", "LastName": "Cameron", "CourseName": "Filmmaking"},
+  {"FirstName": "Albert", "LastName": "Einstein", "CourseName": "Advanced Physics"},
+  {"FirstName": "Marie", "LastName": "Curie", "CourseName": "Advanced Chemistry"},
+  {"FirstName": "Sammy", "LastName": "Sosa", "CourseName": "How To Hit A Homerun"}
 ]
